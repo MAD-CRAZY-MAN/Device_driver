@@ -26,7 +26,7 @@ int main(int argc, char **argv) {
 
 	if (argc != 3)
 	{	
-		printf("usage: ./uart_test [device name] [baud rate]");
+		printf("usage: ./uart_test [device name] [baud rate]\n");
 		return -1;
 	}
 	
