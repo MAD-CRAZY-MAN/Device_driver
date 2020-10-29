@@ -1,11 +1,17 @@
+#include <linux/init.h>
 #include <linux/module.h>
 #include <linux/kernel.h>
 
-int init_module(void) {
+MODULE_LICENSE("Dual BSD/GLP");
+
+static int hello_module_init(void) {
 	printk(KERN_INFO "Hellow world~\n");
 	return 0;
 }
 
-void cleanup_module(void) {
+static void hello_module_exit(void) {
 	printk(KERN_INFO "Goodbye world~\n");
 }
+
+module_init(hello_module_init);
+module_exit(hello_module_exit);
